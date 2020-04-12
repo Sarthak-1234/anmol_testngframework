@@ -12,14 +12,12 @@ import com.aventstack.extentreports.ExtentReports;
 import Objects.GmailPageObject;
 import Objects.GooglePageObject;
 import Reporting.ExtentManager;
-import Reporting.ReportingClass;
 
 public class Init {
 	
 	public static WebDriver driver;
 	public GooglePageObject googlepage;
 	public GmailPageObject gmailobject;
-	
 	public static ExtentReports report;
 	private static final Logger LOGGER = LoggerFactory.getLogger(Init.class);
 	
@@ -31,15 +29,13 @@ public class Init {
 		driver.get("https://www.naukri.com/");
 		googlepage = new GooglePageObject(driver);
 		gmailobject = new GmailPageObject(driver);
-	
 	}
-	
 	
 	@AfterClass
 	public void afterClass() {
 		LOGGER.info("Closing Browser");
 		driver.close();
-		ReportingClass.putReport();
+		//ReportingClass.putReport();
 	}
 
 }
