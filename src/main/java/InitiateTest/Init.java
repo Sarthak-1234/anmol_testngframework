@@ -23,6 +23,8 @@ public class Init {
 	
 	@BeforeClass
 	public void beforeClass() {
+		
+		//done for test-branch
 		driver = WbDriverManager.getDriver();
 		report = ExtentManager.setUp("Extent_Reports");
 		LOGGER.info("Launching URL");
